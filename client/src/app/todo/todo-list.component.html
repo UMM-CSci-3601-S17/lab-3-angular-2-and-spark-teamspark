@@ -3,11 +3,11 @@
     <li class="fred">
         <div class="Todo-id">
     <li class="list-group-item list-group-item-info">
-        <input #input type="text" placeholder="Filter" [(ngModel)]="search">
+        <input #input type="text" placeholder="Filter" [(ngModel)]="searchID">
     </li>
 
     <li class="list-group-item list-group-item-info">Todo id</li>
-    <li *ngFor="let todo of todos | async | filterBy: {category: search}" class="list-group-item">
+    <li *ngFor="let todo of todos | async | filterBy: {_id: searchID}" class="list-group-item fred2">
         {{ todo._id }}
     </li>
     </div>
@@ -16,10 +16,10 @@
 <li class="fred">
     <div class="Todo-Owner">
 <li class="list-group-item list-group-item-info">
-    <input #input type="text" placeholder="Filter" [(ngModel)]="search">
+    <input #input type="text" placeholder="Filter" [(ngModel)]="searchOwner">
 </li>
 <li class="list-group-item list-group-item-info">Todo Owner</li>
-<li *ngFor="let todo of todos | async | filterBy: {owner: search}" class="list-group-item">
+<li *ngFor="let todo of todos | async | filterBy: {owner: searchOwner}" class="list-group-item fred2">
     {{ todo.owner }}
 </li>
     </div>
@@ -28,11 +28,11 @@
     <li class="fred">
         <div class="Todo-Status">
     <li class="list-group-item list-group-item-info">
-        <input #input type="text" placeholder="Filter" [(ngModel)]="search">
+        <input #input type="text" placeholder="Filter" [(ngModel)]="searchStatus">
     </li>
 
     <li class="list-group-item list-group-item-info">Todo status</li>
-    <li *ngFor="let todo of todos | async | filterBy: {category: search}" class="list-group-item">
+    <li *ngFor="let todo of todos | async | filterBy: {status: searchStatus}" class="list-group-item fred2">
         {{ todo.status }}
     </li>
     </div>
@@ -41,11 +41,11 @@
     <li class="fred">
         <div class="Todo-Body">
     <li class="list-group-item list-group-item-info">
-        <input #input type="text" placeholder="Filter" [(ngModel)]="search">
+        <input #input type="text" placeholder="Filter" [(ngModel)]="searchBody">
     </li>
 
     <li class="list-group-item list-group-item-info">Todo body</li>
-    <li *ngFor="let todo of todos | async | filterBy: {category: search}" class="list-group-item">
+    <li *ngFor="let todo of todos | async | filterBy: {body: searchBody}" class="list-group-item fred2">
         {{ todo.body }}
     </li>
     </div>
@@ -54,11 +54,11 @@
 <li class="fred">
     <div class="Todo-Category">
     <li class="list-group-item list-group-item-info">
-        <input #input type="text" placeholder="Filter" [(ngModel)]="search">
+        <input #input type="text" placeholder="Filter" [(ngModel)]="searchCategory">
     </li>
 
     <li class="list-group-item list-group-item-info">Todo category</li>
-    <li *ngFor="let todo of todos | async | filterBy: {category: search}" class="list-group-item">
+    <li *ngFor="let todo of todos | async | filterBy: {category: searchCategory}" class="list-group-item fred2">
         {{ todo.category }}
     </li>
     </div>

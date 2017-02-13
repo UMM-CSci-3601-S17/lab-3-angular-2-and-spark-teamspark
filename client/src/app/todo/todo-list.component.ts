@@ -7,7 +7,7 @@ import { FilterBy } from "./filter.pipe";
     selector: 'todo-list-component',
     providers: [TodoListService],
     templateUrl: 'todo-list.component.html',
-    styles:  ['li.fred { display: inline-block; }']
+    styles:  ['li.fred { display: inline-block; width: 19%; height: 99%; }', 'li.fred2 { display: inline-block; height: 150px; width: 99%}']
 })
 
 export class TodoListComponent {
