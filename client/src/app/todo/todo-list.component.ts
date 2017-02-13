@@ -7,6 +7,7 @@ import { FilterBy } from "./filter.pipe";
     selector: 'todo-list-component',
     providers: [TodoListService],
     templateUrl: 'todo-list.component.html',
+    styles:  ['li.fred { display: inline-block; }']
 })
 
 export class TodoListComponent {
