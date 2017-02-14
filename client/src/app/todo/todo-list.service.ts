@@ -15,4 +15,8 @@ export class TodoListService {
     getTodoById(id: string): Observable<Todo> {
         return this.http.request(this.todoUrl + id).map(res => res.json());
     }
+
+    getTodoByStatus(compl: string): Observable<Todo> {
+        return this.http.request(this.todoUrl + '?status=' + compl).map(res => res.json());
+    }
 }

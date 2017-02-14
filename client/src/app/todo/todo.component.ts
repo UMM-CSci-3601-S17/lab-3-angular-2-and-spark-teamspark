@@ -15,6 +15,7 @@ import { Todo } from "./todo";
 export class TodoComponent implements OnInit {
     public todo: Todo = null;
     private id: string;
+    private status: string;
 
     constructor(private todoListService: TodoListService) {
         // this.todos = this.todoListService.getTodos();
@@ -31,12 +32,29 @@ export class TodoComponent implements OnInit {
         }
     }
 
+    private subscribeToServiceForStatus() {
+        if (this.status) {
+            this.todoListService.getTodoByStatus(this.status).subscribe(
+                todo => this.todo = todo,
+                err => {
+                    console.log(err);
+                }
+            );
+        }
+    }
+
     setId(id: string) {
         this.id = id;
         this.subscribeToServiceForId();
     }
 
+    setStatus(status: string) {
+        this.status = status;
+        this.subscribeToServiceForStatus();
+    }
+
     ngOnInit(): void {
         this.subscribeToServiceForId();
+        this.subscribeToServiceForStatus();
     }
 }

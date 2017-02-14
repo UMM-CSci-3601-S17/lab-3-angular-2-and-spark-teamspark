@@ -1,0 +1,71 @@
+<ul class="list-group">
+
+    <li class="columnStyle">
+        <div class="Todo-id">
+    <li class="list-group-item list-group-item-info">
+        <input #input type="text" placeholder="Filter" [(ngModel)]="searchID">
+    </li>
+
+    <li class="list-group-item list-group-item-info">Todo id</li>
+    <li *ngFor="let todo of todos | async | filterBy: {_id: searchID}" class="list-group-item boxStyle">
+        {{ todo._id }}
+    </li>
+    </div>
+    </li>
+
+    <li class="columnStyle">
+        <div class="Todo-Owner">
+    <li class="list-group-item list-group-item-info">
+        <input #input type="text" placeholder="Filter" [(ngModel)]="searchOwner">
+    </li>
+    <li class="list-group-item list-group-item-info">Todo Owner</li>
+    <li *ngFor="let todo of todos | async | filterBy: {owner: searchOwner}" class="list-group-item boxStyle">
+        {{ todo.owner }}
+    </li>
+    </div>
+    </li>
+
+    <li class="columnStyle">
+        <div class="Todo-Status">
+    <li class="list-group-item list-group-item-info">
+        <input #input type="text" placeholder="Filter" [(ngModel)]="searchStatus">
+    </li>
+
+    <li class="list-group-item list-group-item-info">Todo status</li>
+    <li *ngFor="let todo of todos | async | filterBy: {status: searchStatus}" class="list-group-item boxStyle">
+        {{ todo.status }}
+    </li>
+    </div>
+    </li>
+
+    <li class="columnStyle">
+        <div class="Todo-Body">
+    <li class="list-group-item list-group-item-info">
+        <input #input type="text" placeholder="Filter" [(ngModel)]="searchBody">
+    </li>
+
+    <li class="list-group-item list-group-item-info">Todo body</li>
+    <li *ngFor="let todo of todos | async | filterBy: {body: searchBody}" class="list-group-item boxStyle">
+        {{ todo.body }}
+    </li>
+    </div>
+    </li>
+
+    <li class="columnStyle">
+        <div class="Todo-Category">
+    <li class="list-group-item list-group-item-info">
+        <input #input type="text" placeholder="Filter" [(ngModel)]="searchCategory">
+    </li>
+
+    <li class="list-group-item list-group-item-info">Todo category</li>
+    <li *ngFor="let todo of todos | async | filterBy: {category: searchCategory}" class="list-group-item boxStyle">
+        {{ todo.category }}
+    </li>
+    </div>
+    <br>
+    <br>
+    <br>
+    </li>
+
+
+</ul>
