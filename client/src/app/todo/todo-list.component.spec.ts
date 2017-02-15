@@ -79,14 +79,14 @@ describe("Todo list", () => {
         expect(todoList.todos.some((todo: Todo) => todo.owner === "Barry" )).toBe(true);
     });
 
-    it("doesn't contain a todo named 'Santa'", () => {
+    it("doesn't contain a todo named 'Keith'", () => {
         fixture.detectChanges();
-        expect(todoList.todos.some((todo: Todo) => todo.owner === "Santa" )).toBe(false);
+        expect(todoList.todos.some((todo: Todo) => todo.owner === "Keith" )).toBe(false);
     });
 
     it("has two todos that are complete", () => {
         fixture.detectChanges();
-        expect(todoList.todos.filter((todo: Todo) => todo.status === true).length).toBe(2);
+        expect(todoList.todos.filter((todo: Todo) => todo.status === true).length).toBe(1);
     });
 
 });

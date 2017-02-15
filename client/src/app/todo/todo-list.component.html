@@ -3,21 +3,26 @@
     <li class="list-group-item list-group-item-info">
         <input #input type="text" placeholder="Filter by id" (input)="searchID = $event.target.value">
         <input #input type="text" placeholder="Filter by owner" (input)="searchOwner = $event.target.value">
-        <input #input type="text" placeholder="Filter by status" (input)="searchStatus = $event.target.value">
+        <select #input id="Filter by status" (input)="searchStatus = $event.target.value">
+            <option value="">Filter by Status</option>
+            <option value=1>Complete</option>
+            <option value=0>Incomplete</option>
+        </select>
         <input #input type="text" placeholder="Filter by body" (input)="searchBody = $event.target.value">
         <input #input type="text" placeholder="Filter by category" (input)="searchCategory = $event.target.value">
     </li>
-    <li class="list-group-item list-group-item-info">Todo Owner</li>
     <li *ngFor="let todo of todos |
       filterBy: {_id: searchID} |
       filterBy: {owner: searchOwner }|
       filterBy: {status: searchStatus} |
       filterBy: {body: searchBody} |
-      filterBy: {category: searchCategory }" class="list-group-item">
+      filterBy: {category: searchCategory }" class="list-group-item list-group-item-info2">
         ID: {{ todo._id }} <br>
         Owner: {{ todo.owner }} <br>
         Status: {{ todo.status }} <br>
         Body: {{ todo.body }} <br>
         Category: {{ todo.category }}
     </li>
+
+    <!--<div [ngStyle]="{background: 'url(http://blog.hdwallsource.com/wp-content/uploads/2016/04/out-of-focus-wallpaper-37914-38783-hd-wallpapers.jpg)', width: 100%, height: '100%'"></div>-->
 </ul>

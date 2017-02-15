@@ -7,7 +7,9 @@ import { FilterBy } from "./filter.pipe";
     selector: 'todo-list-component',
     providers: [ FilterBy ],
     templateUrl: 'todo-list.component.html',
-    styles:  ['li.columnStyle { display: inline-block; width: 19%; height: 99%; vertical-align: text-top; }', 'li.boxStyle { display: inline-block; height: 150px; width: 99%}']
+    // styles:  ['li.columnStyle { display: inline-block; width: 19%; height: 99%; vertical-align: text-top; }', 'li.boxStyle { display: inline-block; height: 150px; width: 99%}']
+
+    styles: ['li.list-group-item-info {background-color: black; color: black;}', 'li.list-group-item-info2 {background-color : #333333; color : white;}' ]
 })
 
 export class TodoListComponent implements OnInit{
