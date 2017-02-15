@@ -15,6 +15,7 @@ angular so it can be used like a program and never leave the page.  The SparkJav
 appears to be the only thing doing the routing.
 
 3) Todo API: Redux
-discussion: we're gonna just copy and some code mkay.
+discussion: We discussed how we were going to make a visually appealing and approachable todo search page.
+  We also discussed how we were going to approach the structure of the todo's based on that of the user page.
 
 
