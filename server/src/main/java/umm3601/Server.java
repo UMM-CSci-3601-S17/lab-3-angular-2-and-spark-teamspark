@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import umm3601.todo.ToDoController;
+import umm3601.todo.TodoController;
 import umm3601.user.UserController;
 
 import java.io.IOException;
@@ -15,7 +16,7 @@ public class Server {
 
         Gson gson = new Gson();
         UserController userController = new UserController();
-        ToDoController toDoController = new ToDoController();
+        TodoController toDoController = new TodoController();
 
         options("/*", (request, response) -> {
 
@@ -57,14 +58,14 @@ public class Server {
         // List todos
         get("api/todos", (req, res) -> {
             res.type("application/json");
-            return gson.toJson(toDoController.listToDos(req.queryMap().toMap()));
+            return gson.toJson(toDoController.listTodos(req.queryMap().toMap()));
         });
 
         // See specific todo
         get("api/todos/:id", (req, res) -> {
             res.type("application/json");
             String id = req.params("id");
-            return gson.toJson(toDoController.getToDo(id));
+            return gson.toJson(toDoController.getTodo(id));
         });
 
         // Handle "404" file not found requests:
